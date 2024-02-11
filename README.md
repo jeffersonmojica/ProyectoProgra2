@@ -1,7 +1,7 @@
 # ProyectoProgra2
-## PROYECTO: Biblioteca de Peliculas.
+# PROYECTO: Biblioteca de Peliculas.
 
 
-##INTEGRANTES: 
+# INTEGRANTES: 
 - Sergio Gomez,
 - Jefferson Mojica.
