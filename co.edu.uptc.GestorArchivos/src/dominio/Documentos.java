@@ -33,5 +33,7 @@ public class Documentos {
                 "nombreDoc='" + nombreDoc + '\'' +
                 ", idDoc='" + idDoc + '\'' +
                 '}';
+        
+        //imagnes "portadas"
     }
 }
