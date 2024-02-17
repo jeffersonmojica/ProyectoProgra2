@@ -35,5 +35,6 @@ public class Documentos {
                 '}';
         
         //imagnes "portadas"
+        //cambiar nombre al proyecto
     }
 }
