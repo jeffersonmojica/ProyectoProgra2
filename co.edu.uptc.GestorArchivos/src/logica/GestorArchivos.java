@@ -46,3 +46,4 @@ public class GestorArchivos <T> {
                 '}'+"\n";
     }
 }
+//gestor peliculas
