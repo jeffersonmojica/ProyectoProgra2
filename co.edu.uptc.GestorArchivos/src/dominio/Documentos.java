@@ -1,6 +1,9 @@
 package dominio;
-
+//entre al sistema
+// creo
+// holi
 public class Documentos {
+
     private String nombreDoc,idDoc;
 
     public Documentos(String nombreDoc, String idDoc) {

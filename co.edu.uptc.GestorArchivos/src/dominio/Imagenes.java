@@ -1,5 +1,5 @@
 package dominio;
-
+//holi soy yo de nuevo
 public class Imagenes {
     private String nombreImg, idImg;
 
