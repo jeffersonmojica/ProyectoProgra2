@@ -1,0 +1,19 @@
+The Princess Bride;Aventura,Comedia;Rob Reiner;vista
+The Dark Knight;Acción;Christopher Nolan;vista
+The Shawshank Redemption;Drama;Frank Darabont;no vista
+The Silence of the Lambs;Suspenso;Jonathan Demme;no vista
+The Matrix;Ciencia ficción;The Wachowskis;no vista
+The Shining;Terror;Stanley Kubrick;vista
+The Grand Budapest Hotel;Comedia;Wes Anderson;no vista
+The Social Network;Drama;David Fincher;no vista
+Forrest Gump;Drama;Robert Zemeckis;no vista
+The Godfather;Drama;Francis Ford Coppola;no vista
+Jurassic Park;Aventura;Steven Spielberg;vista
+The Hangover;Comedia;Todd Phillips;vista
+titanic;Drama;james cameron;vista
+Pulp Fiction;Acción;Quentin Tarantino;no vista
+Toy Story;Animación,Comedia;John Lasseter,Lee Unkrich;vista
+Coco;Animación,Fantasía;Lee Unkrich,Adrian Molina;vista
+Inception;Ciencia ficción;Christopher Nolan;vista
+The Conjuring;Terror;James Wan;vista
+Eternal Sunshine of the Spotless Mind;Drama;Michel Gondry;vista
