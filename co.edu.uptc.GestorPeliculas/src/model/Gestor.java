@@ -90,8 +90,3 @@ public class Gestor {
         return "GestionPeliculas:\n{" + peliculas + '}';
     }
 }
-
-//arreglos
-//mas arreglos
-//otro
-//mas
