@@ -90,3 +90,6 @@ public class Gestor {
         return "GestionPeliculas:\n{" + peliculas + '}';
     }
 }
+
+
+//committttt
