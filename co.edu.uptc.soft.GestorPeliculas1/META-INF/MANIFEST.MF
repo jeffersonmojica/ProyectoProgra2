@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GestorPeliculas1
+Bundle-SymbolicName: co.edu.uptc.soft.GestorPeliculas1
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: co.edu.uptc.soft.GestorPeliculas1
+Export-Package: application

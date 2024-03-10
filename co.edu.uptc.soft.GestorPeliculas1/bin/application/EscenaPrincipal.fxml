@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1130.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <top>
+      <HBox prefHeight="42.0" prefWidth="1106.0" styleClass="white-background" stylesheets="@../css/Style.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="57.0" prefWidth="203.0" text="SJ MOVIES" textFill="#ff9000">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="48.0" />
+               </font>
+            </Label>
+            <Separator orientation="VERTICAL" prefHeight="57.0" prefWidth="60.0">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding></Separator>
+            <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="670.0" spacing="20.0" stylesheets="@../css/Style.css" HBox.hgrow="ALWAYS">
+               <children>
+                  <TextField fx:id="searchField" alignment="TOP_LEFT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="217.0" promptText="Search" stylesheets="@../css/Style.css">
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="round-layout" />
+                     </styleClass>
+                  </TextField>
+                  <ImageView fitHeight="20.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/3844432_magnifier_search_zoom_icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Pane prefHeight="57.0" prefWidth="58.0" />
+            <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="57.0" prefWidth="202.0">
+               <children>
+                  <Label prefHeight="57.0" prefWidth="141.0" text="Usuario77">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </Label>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/0eaadbc3d138410d9d7fe96aa8636da9.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="250.0" spacing="10.0" styleClass="white-background" stylesheets="@../css/Style.css" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="192.0" prefWidth="224.0">
+               <children>
+                  <Label prefHeight="32.0" prefWidth="137.0" text="Navegador">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../css/Style.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Img/8680118_fire_line_icon.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="32.0" prefWidth="136.0" styleClass="mouse-moved" stylesheets="@../css/Style.css" text="Tendencia">
+                           <font>
+                              <Font name="Berlin Sans FB" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" right="20.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="232.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../css/Style.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Img/1181208_browser_safari_icon.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="32.0" prefWidth="140.0" stylesheets="@../css/Style.css" text="Explorar">
+                           <font>
+                              <Font name="Berlin Sans FB" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" right="20.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+                <!--   <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../css/Style.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Img/623084_burger_menu_category_interface_list_icon.png" />
+                           </image>
+                        </ImageView>
+                        <ComboBox prefHeight="32.0" prefWidth="124.0" promptText="     Generos" styleClass="transparent" stylesheets="@../css/Style.css" HBox.hgrow="ALWAYS" />
+                      
+                     </children>
+                  </HBox>
+                   -->
+					<HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../css/Style.css">
+					    <children>
+					        <ImageView fitHeight="30.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+					            <image>
+					                <Image url="@../Img/623084_burger_menu_category_interface_list_icon.png" />
+					            </image>
+					        </ImageView>
+					        <ComboBox fx:id="genreComboBox" prefHeight="40.0" prefWidth="149.0" promptText="  Generos" stylesheets="@../css/Style.css" HBox.hgrow="ALWAYS">
+					            <items>
+					                <FXCollections fx:factory="observableArrayList">
+					                    <String fx:value="Ciencia ficción" />
+					                    <String fx:value="Comedia" />
+					                    <String fx:value="Terror" />
+					                    <String fx:value="Acción" />
+					                    <String fx:value="Suspenso" />
+					                    <String fx:value="Animada" />
+					                </FXCollections>
+					            </items>
+                           <styleClass>
+                              <String fx:value="transparent" />
+                              <String fx:value="font-size" />
+                           </styleClass>
+					
+					        </ComboBox>
+					    </children>
+					</HBox>
+
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Separator prefWidth="200.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="192.0" prefWidth="250.0">
+               <children>
+                  <Label prefHeight="32.0" prefWidth="137.0" text="Tus Peliculas">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../css/Style.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Img/1564499_accept_added_check_complite_yes_icon.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="32.0" prefWidth="124.0" styleClass="mouse-moved" stylesheets="@../css/Style.css" text="Vistas">
+                           <font>
+                              <Font name="Berlin Sans FB" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" right="20.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../css/Style.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Img/85188_fav_icon.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="32.0" prefWidth="124.0" styleClass="mouse-moved" stylesheets="@../css/Style.css" text="Favoritas">
+                           <font>
+                              <Font name="Berlin Sans FB" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" right="20.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../css/Style.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Img/392529_alarm_alert_clock_event_history_icon.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="32.0" prefWidth="124.0" styleClass="mouse-moved" stylesheets="@../css/Style.css" text="Historial">
+                           <font>
+                              <Font name="Berlin Sans FB" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" right="20.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Separator prefWidth="200.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="184.0" prefWidth="250.0">
+               <children>
+                  <Label prefHeight="32.0" prefWidth="137.0" text="Biblioteca">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../css/Style.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Img/3209266_bookcase_books_bookshelf_report_shelf_icon.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="32.0" prefWidth="149.0" styleClass="mouse-moved" stylesheets="@../css/Style.css" text="Tu Biblioteca">
+                           <font>
+                              <Font name="Berlin Sans FB" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" right="20.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Button alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: #FFA832;" text="Crear Biblioteca">
+                           <font>
+                              <Font name="Berlin Sans FB" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Separator prefWidth="200.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Agragado Recientemente">
+               <font>
+                  <Font name="Berlin Sans FB" size="20.0" />
+               </font>
+            </Label>
+      
+            <ScrollPane prefHeight="250.0" prefWidth="200.0" styleClass="transparent" stylesheets="@../css/Style.css">
+   				<content>
+     				 <HBox fx:id="cardLayout" prefHeight="230.0" prefWidth="1122.0" styleClass="transparent" stylesheets="@../css/Style.css" />
+  					 </content>
+			</ScrollPane>
+            <Label text="Para Ti">
+               <font>
+                  <Font name="Berlin Sans FB" size="20.0" />
+               </font>
+            </Label>
+            <ScrollPane prefHeight="200.0" prefWidth="868.0" styleClass="transparent" stylesheets="@../css/Style.css" VBox.vgrow="ALWAYS">
+               <content>
+                  <GridPane fx:id="peliculaContainer" prefHeight="14.0" prefWidth="3.0">
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+            
+            
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

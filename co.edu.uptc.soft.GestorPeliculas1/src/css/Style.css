@@ -1,0 +1,27 @@
+.white-background{
+	-fx-background-color: #fff;
+}
+.transparent{ -fx-background-color: rgba(0,0,0,0);}
+
+.round-layout{
+	-fx-border-radius:50;
+	-fx-border-color:#D7D7D7;
+}
+
+.selected{	-fx-background-color:#F3F3F3;}
+
+/* .mouse-moved:hover{-fx-background-color: #E4E4E4;}*/
+.mouse-moved:hover{	-fx-background-color: orange;}
+
+.shadow{
+	-fx-effect:dropShadow(three-pass-box,rgba(0,0,0,0.1),10,0,0,10);
+}
+.toggle-button {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0.2em 0.4167em 0.25em 0.4167em; 
+}
+.font-size{
+	-fx-font-size: 17px;
+    -fx-font-weight: bold;	
+    }
