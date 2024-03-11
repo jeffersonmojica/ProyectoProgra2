@@ -811,6 +811,7 @@ public class Controller implements Initializable {
 		pelicula.setDescripcion("2011 - Animada - 1h 47m");
 		pelicula.setGenero("Animada");
 		ls.add(pelicula);
+		//peliculas
 
 		return ls;
 
