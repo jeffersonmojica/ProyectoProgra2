@@ -1,322 +1,4 @@
 package application;
-/*
-import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import model.Pelicula;
-
-public class Controller implements Initializable {
-
-
-	@FXML
-	private HBox cardLayout;
-	@FXML
-	private GridPane peliculaContainer;
-    @FXML
-    private TextField searchField;
-
-	private List<Pelicula> agregadoRecientemente;
-	private List<Pelicula> paraTi;
-
-
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		agregadoRecientemente = new ArrayList<>(agregadoRecientemente());
-		paraTi = new ArrayList<>(peliculas());
-		int column = 0;
-		int row = 1;
-
-		try {
-
-			for (Pelicula value:agregadoRecientemente) {
-				FXMLLoader fxmlLoader = new FXMLLoader();
-				fxmlLoader.setLocation(getClass().getResource("card.fxml"));    
-				HBox cardBox = fxmlLoader.load();
-				CardController cardController = fxmlLoader.getController();
-				cardController.setData(value);
-				HBox.setMargin(cardBox, new Insets(0, 10, 0, 10));//margen no quitar
-				cardLayout.getChildren().add(cardBox);
-			}
-
-			for (Pelicula pelicula : paraTi) {
-				FXMLLoader fxmlLoader = new FXMLLoader();
-				fxmlLoader.setLocation(getClass().getResource("pelicula.fxml"));    
-				VBox peliculaBox = fxmlLoader.load();
-				PeliculaController peliculaController = fxmlLoader.getController();
-				peliculaController.setData(pelicula);
-				HBox.setMargin(peliculaBox, new Insets(0, 10, 0, 10));//margen no quitar
-
-				if (column == 6) {
-					column = 0;
-					++row;
-				}
-				peliculaContainer.add(peliculaBox,column++, row);
-				GridPane.setMargin(peliculaBox, new Insets(10, 10, 10, 10));
-			}
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	private List<Pelicula> agregadoRecientemente(){
-		List<Pelicula> ls = new ArrayList<>();
-
-		Pelicula pelicula = new Pelicula();
-		pelicula.setTitulo("INTERSTELLAR");
-		pelicula.setImagenSrc("/Img/p1.jpg");
-		pelicula.setDescripcion("2014 - Ciencia ficción - 2h 49m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("PARASITE");
-		pelicula.setImagenSrc("/Img/p2.jpg");
-		pelicula.setDescripcion("2019 - Suspenso - 2h 12m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("PULP FICTION");
-		pelicula.setImagenSrc("/Img/p3.jpg");
-		pelicula.setDescripcion("1994 - Crimen - 2h 34m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("EL PRECIO DEL MAÑANA");
-		pelicula.setImagenSrc("/Img/p4.jpg");
-		pelicula.setDescripcion("2011 - Acción - 1h 49m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("BLADE RUNNER 2049");
-		pelicula.setImagenSrc("/Img/p5.jpeg");
-		pelicula.setDescripcion("2017 - Ciencia ficción - 2h 43m");
-		ls.add(pelicula);
-
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("SPACEMAN");
-		pelicula.setImagenSrc("/Img/p6.jpeg");
-		pelicula.setDescripcion("2024 - Ciencia ficción - 1h 49m");
-		ls.add(pelicula);
-
-		return ls;
-
-	}
-
-	private List<Pelicula> peliculas(){
-		List<Pelicula> ls = new ArrayList<>();
-
-		//------CIENCIA FICCION--------
-
-		Pelicula pelicula = new Pelicula();
-		pelicula.setTitulo("BLADE RUNNER 2049");
-		pelicula.setImagenSrc("/Img/p5.jpeg");
-		pelicula.setDescripcion("2017 - Ciencia ficción - 2h 43m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("SPACEMAN");
-		pelicula.setImagenSrc("/Img/p6.jpeg");
-		pelicula.setDescripcion("2024 - Ciencia ficción - 1h 49m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("SPIDER-MAN");
-		pelicula.setImagenSrc("/Img/p7.jpg");
-		pelicula.setDescripcion("2021 - Ciencia ficción - 2h 28m");
-		ls.add(pelicula);
-
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("RESISTENCIA");
-		pelicula.setImagenSrc("/Img/p18.jpg");
-		pelicula.setDescripcion("2023 - Ciencia ficción - 2h 13m");
-		ls.add(pelicula);		
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("EL ORIGRN");
-		pelicula.setImagenSrc("/Img/p19.jpeg");
-		pelicula.setDescripcion("2010 - Ciencia ficción - 2h 28m");
-		ls.add(pelicula);
-
-
-
-		//-------------COMEDIA---------------------------------
-		pelicula = new Pelicula();
-		pelicula.setTitulo("MISTERIO A LA VISTA");
-		pelicula.setImagenSrc("/Img/p8.jpeg");
-		pelicula.setDescripcion("2023 - Comedia - 1h 28m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("EL MAESTRO LUCHADOR");
-		pelicula.setImagenSrc("/Img/p9.jpg");
-		pelicula.setDescripcion("2012 - Comedia - 1h 45m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("SUPERCOOL");
-		pelicula.setImagenSrc("/Img/p10.jpeg");
-		pelicula.setDescripcion("2007 - Comedia - 1h 59m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("DOS TONTOS MUY TONTOS");
-		pelicula.setImagenSrc("/Img/p11.jpeg");
-		pelicula.setDescripcion("1994 - Comedia - 1h 47m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("KICK-ASS");
-		pelicula.setImagenSrc("/Img/p12.jpeg");
-		pelicula.setDescripcion("2010 - Comedia - 1h 57m");
-		ls.add(pelicula);
-
-		//--------------------TERROR
-
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("LA HUERFANA");
-		pelicula.setImagenSrc("/Img/p13.jpeg");
-		pelicula.setDescripcion("2009 - Terror - 2h 3m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("ANABELLE");
-		pelicula.setImagenSrc("/Img/p14.jpeg");
-		pelicula.setDescripcion("2014 - Terror - 1h 35m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("EL ARO");
-		pelicula.setImagenSrc("/Img/p15.jpg");
-		pelicula.setDescripcion("2002 - Terror - 1h 55m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("EL CONJURO");
-		pelicula.setImagenSrc("/Img/p16.jpeg");
-		pelicula.setDescripcion("2013 - Terror - 1h 52m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("LA MONJA");
-		pelicula.setImagenSrc("/Img/p17.jpeg");
-		pelicula.setDescripcion("2018 - Terror - 1h 36m");
-		ls.add(pelicula);
-
-
-		//------Acción------------------------------------------------
-		pelicula = new Pelicula();
-		pelicula.setTitulo("BATMAN");
-		pelicula.setImagenSrc("/Img/p20.jpg");
-		pelicula.setDescripcion("2012 - Acción - 2h 45m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("BUSQUEDA IMPLACABLE");
-		pelicula.setImagenSrc("/Img/p21.jpeg");
-		pelicula.setDescripcion("2008 - Acción - 1h 33m");
-		ls.add(pelicula);	
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("EL MECANICO");
-		pelicula.setImagenSrc("/Img/p22.jpeg");
-		pelicula.setDescripcion("2016 - Acción - 1h 38m");
-		ls.add(pelicula);	
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("JACK REACHER");
-		pelicula.setImagenSrc("/Img/p23.jpeg");
-		pelicula.setDescripcion("2012 - Acción - 2h 10m");
-		ls.add(pelicula);	
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("AL FILO DEL MAÑANA");
-		pelicula.setImagenSrc("/Img/p24.jpeg");
-		pelicula.setDescripcion("2014 - Acción - 1h 53m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("EL PRECIO DEL MAÑANA");
-		pelicula.setImagenSrc("/Img/p4.jpg");
-		pelicula.setDescripcion("2011 - Acción - 1h 49m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("PULP FICTION");
-		pelicula.setImagenSrc("/Img/p3.jpg");
-		pelicula.setDescripcion("1994 - Crimen - 2h 34m");
-		ls.add(pelicula);
-
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("INTERSTELLAR");
-		pelicula.setImagenSrc("/Img/p1.jpg");
-		pelicula.setDescripcion("2014 - Ciencia ficción - 2h 49m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("PARASITE");
-		pelicula.setImagenSrc("/Img/p2.jpg");
-		pelicula.setDescripcion("2019 - Suspenso - 2h 12m");
-		ls.add(pelicula);
-
-		//------------------ANIMADAS---------------
-
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("CARS");
-		pelicula.setImagenSrc("/Img/p25.jpg");
-		pelicula.setDescripcion("2006 - Animada - 1h 57m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("EL REY LEON");
-		pelicula.setImagenSrc("/Img/p26.jpeg");
-		pelicula.setDescripcion("1994 - Animada - 1h 28m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("COMO ENTRENAR A TU DRAGON");
-		pelicula.setImagenSrc("/Img/p27.jpeg");
-		pelicula.setDescripcion("2010 - Animada - 1h 38m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("SHREK");
-		pelicula.setImagenSrc("/Img/p28.jpg");
-		pelicula.setDescripcion("2001 - Animada - 1h 30m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("KUNG FU PANDA");
-		pelicula.setImagenSrc("/Img/p29.jpeg");
-		pelicula.setDescripcion("2008 - Animada - 1h 32m");
-		ls.add(pelicula);
-
-		pelicula = new Pelicula();
-		pelicula.setTitulo("RANGO");
-		pelicula.setImagenSrc("/Img/p30.jpg");
-		pelicula.setDescripcion("2011 - Animada - 1h 47m");
-		ls.add(pelicula);
-
-		return ls;
-
-	}
-
-
-}
- */
 
 
 import java.io.IOException;
@@ -325,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
-
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -339,7 +20,6 @@ import javafx.scene.layout.VBox;
 import model.Pelicula;
 
 public class Controller implements Initializable {
-
 
 	@FXML
 	private HBox cardLayout;
@@ -369,8 +49,7 @@ public class Controller implements Initializable {
 
 	    loadMovies();
 	}
-
-	private void filterMoviesByTitle(String searchText) {
+	/*private void filterMoviesByTitle(String searchText) {
 	    List<Pelicula> filteredMovies = paraTi.stream()
 	            .filter(pelicula -> pelicula.getTitulo().toLowerCase().contains(searchText.toLowerCase()) || searchText.isEmpty())
 	            .collect(Collectors.toList());
@@ -413,7 +92,75 @@ public class Controller implements Initializable {
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }
+	}*/
+
+	/////////////////////////////----------busqueda ya no afecta "recientemente"---------------------------------
+	
+	private void filterMoviesByTitle(String searchText) {
+	    List<Pelicula> filteredMovies = paraTi.stream()
+	            .filter(pelicula -> pelicula.getTitulo().toLowerCase().contains(searchText.toLowerCase()) || searchText.isEmpty())
+	            .collect(Collectors.toList());
+
+	    displayFilteredMovies(filteredMovies, false); // El segundo parámetro indica que no se aplica el filtro a "Agregado Recientemente"
 	}
+
+	private void filterMoviesByGenre(String selectedGenre) {
+	    List<Pelicula> filteredMovies = paraTi.stream()
+	            .filter(pelicula -> "Todos".equals(selectedGenre) || pelicula.getGenero().equals(selectedGenre))
+	            .collect(Collectors.toList());
+
+	    displayFilteredMovies(filteredMovies, false); // El segundo parámetro indica que no se aplica el filtro a "Agregado Recientemente"
+	}
+
+	private void displayFilteredMovies(List<Pelicula> filteredMovies, boolean applyFilters) {
+	    // Limpiar la interfaz de películas "Para Ti"
+	    peliculaContainer.getChildren().clear();
+	    cardLayout.getChildren().clear(); // Limpiar el layout de tarjetas
+
+	    int column = 0;
+	    int row = 1;
+
+	    try {
+	        // Mostrar películas "Agregado Recientemente"
+	        for (Pelicula pelicula : agregadoRecientemente) {
+	            FXMLLoader fxmlLoader = new FXMLLoader();
+	            fxmlLoader.setLocation(getClass().getResource("card.fxml"));
+	            HBox cardBox = fxmlLoader.load();
+	            CardController cardController = fxmlLoader.getController();
+	            cardController.setData(pelicula);
+	            HBox.setMargin(cardBox, new Insets(0, 10, 0, 10));
+	            cardLayout.getChildren().add(cardBox);
+	        }
+
+	        // Mostrar películas filtradas "Para Ti"
+	        for (Pelicula pelicula : filteredMovies) {
+	            FXMLLoader fxmlLoader = new FXMLLoader();
+	            fxmlLoader.setLocation(getClass().getResource("pelicula.fxml"));
+	            VBox peliculaBox = fxmlLoader.load();
+	            PeliculaController peliculaController = fxmlLoader.getController();
+	            peliculaController.setData(pelicula);
+	            HBox.setMargin(peliculaBox, new Insets(0, 10, 0, 10));
+
+	            if (column == 6) {
+	                column = 0;
+	                ++row;
+	            }
+	            peliculaContainer.add(peliculaBox, column++, row);
+	            GridPane.setMargin(peliculaBox, new Insets(10, 10, 10, 10));
+	        }
+
+	        if (applyFilters) {
+	            // Aplicar filtros solo si se indica que se deben aplicar
+	            List<Pelicula> filteredRecentlyAdded = agregadoRecientemente.stream()
+	                    .filter(pelicula -> paraTi.stream().anyMatch(p -> p.getTitulo().equals(pelicula.getTitulo())))
+	                    .collect(Collectors.toList());
+	            displayFilteredMovies(filteredRecentlyAdded, false); // No aplicar filtros en esta llamada
+	        }
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	}
+	////////////////////////////
 
 	private List<String> obtenerGeneros(List<Pelicula> peliculas) {
 	    return peliculas.stream()
@@ -422,7 +169,7 @@ public class Controller implements Initializable {
 	            .collect(Collectors.toList());
 	}
 
-	private void loadMovies() {
+private void loadMovies() {
 	    int column = 0;
 	    int row = 1;
 
@@ -535,7 +282,7 @@ public class Controller implements Initializable {
 		ls.add(pelicula);		
 
 		pelicula = new Pelicula();
-		pelicula.setTitulo("EL ORIGRN");
+		pelicula.setTitulo("EL ORIGEN");
 		pelicula.setImagenSrc("/Img/p19.jpeg");
 		pelicula.setDescripcion("2010 - Ciencia ficción - 2h 28m");
 		pelicula.setGenero("Ciencia ficción");
@@ -637,7 +384,7 @@ public class Controller implements Initializable {
 		ls.add(pelicula);
 		
 		pelicula = new Pelicula();
-		pelicula.setTitulo("EL MECANICO");
+		pelicula.setTitulo("EL ESPECIALISTA");
 		pelicula.setImagenSrc("/Img/p22.jpeg");
 		pelicula.setDescripcion("2016 - Acción - 1h 38m");
 		pelicula.setGenero("Acción");
@@ -726,9 +473,10 @@ public class Controller implements Initializable {
 		return ls;
 
 	}
-
-
 }
+
+
+
 
 
 
