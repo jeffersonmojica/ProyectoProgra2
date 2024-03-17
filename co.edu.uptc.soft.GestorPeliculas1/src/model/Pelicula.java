@@ -5,9 +5,16 @@ private String Titulo;
 private String imagenSrc;
 private String descripcion;
 private String genero;
+private boolean favorita;
 
 
 
+public boolean isFavorita() {
+	return favorita;
+}
+public void setFavorita(boolean favorita) {
+	this.favorita = favorita;
+}
 public String getGenero() {
 	return genero;
 }

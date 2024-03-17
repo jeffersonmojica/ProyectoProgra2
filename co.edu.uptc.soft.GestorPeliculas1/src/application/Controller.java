@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,6 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import logica.FavoritosManager;
 import model.Pelicula;
 
 public class Controller implements Initializable {
@@ -32,13 +34,15 @@ public class Controller implements Initializable {
 
 	private List<Pelicula> agregadoRecientemente;
 	private List<Pelicula> paraTi;
+    private FavoritosManager favoritosManager; // Instancia de FavoritosManager
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 	    agregadoRecientemente = new ArrayList<>(agregadoRecientemente());
 	    paraTi = new ArrayList<>(peliculas());
+        favoritosManager = new FavoritosManager();
 
-	    // Configurar ComboBox de género
+	    //********* Configurar ComboBox de género
 	    List<String> genres = obtenerGeneros(paraTi);
 	    genres.add(0, "Todos"); // Añadir una opción "Todos" al inicio
 	    genreComboBox.setItems(FXCollections.observableArrayList(genres));
@@ -49,51 +53,31 @@ public class Controller implements Initializable {
 
 	    loadMovies();
 	}
-	/*private void filterMoviesByTitle(String searchText) {
-	    List<Pelicula> filteredMovies = paraTi.stream()
-	            .filter(pelicula -> pelicula.getTitulo().toLowerCase().contains(searchText.toLowerCase()) || searchText.isEmpty())
-	            .collect(Collectors.toList());
+	
+	
 
-	    displayFilteredMovies(filteredMovies);
-	}
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++
+	
+	@FXML
+	public void mostrarFavoritas(ActionEvent event) {
+	    // Supongamos que tienes una lista de películas favoritas en tu clase FavoritosManager
+	    List<Pelicula> peliculasFavoritas = FavoritosManager.getInstancia().obtenerFavoritos();
 
-	private void filterMoviesByGenre(String selectedGenre) {
-	    List<Pelicula> filteredMovies = paraTi.stream()
-	            .filter(pelicula -> "Todos".equals(selectedGenre) || pelicula.getGenero().equals(selectedGenre))
-	            .collect(Collectors.toList());
-
-	    displayFilteredMovies(filteredMovies);
-	}
-
-	private void displayFilteredMovies(List<Pelicula> filteredMovies) {
-	    // Limpiar la interfaz
-	    cardLayout.getChildren().clear();
-	    peliculaContainer.getChildren().clear();
-
-	    int column = 0;
-	    int row = 1;
-
-	    try {
-	        for (Pelicula pelicula : filteredMovies) {
-	            FXMLLoader fxmlLoader = new FXMLLoader();
-	            fxmlLoader.setLocation(getClass().getResource("pelicula.fxml"));
-	            VBox peliculaBox = fxmlLoader.load();
-	            PeliculaController peliculaController = fxmlLoader.getController();
-	            peliculaController.setData(pelicula);
-	            HBox.setMargin(peliculaBox, new Insets(0, 10, 0, 10));
-
-	            if (column == 6) {
-	                column = 0;
-	                ++row;
-	            }
-	            peliculaContainer.add(peliculaBox, column++, row);
-	            GridPane.setMargin(peliculaBox, new Insets(10, 10, 10, 10));
-	        }
-	    } catch (IOException e) {
-	        e.printStackTrace();
+	    // Ahora puedes mostrar las películas favoritas en la interfaz de usuario
+	    for (Pelicula pelicula : peliculasFavoritas) {
+	        // Aquí puedes agregar lógica para mostrar cada película en la interfaz
+	        System.out.println("Título: " + pelicula.getTitulo());
+	        System.out.println("Descripción: " + pelicula.getDescripcion());
+	        System.out.println("Género: " + pelicula.getGenero());
+	        // Puedes usar los elementos de tu interfaz como Labels e ImageViews para mostrar la información de la película
 	    }
-	}*/
+	}
 
+
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++
+	
+	
+	
 	/////////////////////////////----------busqueda ya no afecta "recientemente"---------------------------------
 	
 	private void filterMoviesByTitle(String searchText) {
@@ -476,6 +460,50 @@ private void loadMovies() {
 }
 
 
+/*private void filterMoviesByTitle(String searchText) {
+List<Pelicula> filteredMovies = paraTi.stream()
+        .filter(pelicula -> pelicula.getTitulo().toLowerCase().contains(searchText.toLowerCase()) || searchText.isEmpty())
+        .collect(Collectors.toList());
+
+displayFilteredMovies(filteredMovies);
+}
+
+private void filterMoviesByGenre(String selectedGenre) {
+List<Pelicula> filteredMovies = paraTi.stream()
+        .filter(pelicula -> "Todos".equals(selectedGenre) || pelicula.getGenero().equals(selectedGenre))
+        .collect(Collectors.toList());
+
+displayFilteredMovies(filteredMovies);
+}
+
+private void displayFilteredMovies(List<Pelicula> filteredMovies) {
+// Limpiar la interfaz
+cardLayout.getChildren().clear();
+peliculaContainer.getChildren().clear();
+
+int column = 0;
+int row = 1;
+
+try {
+    for (Pelicula pelicula : filteredMovies) {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("pelicula.fxml"));
+        VBox peliculaBox = fxmlLoader.load();
+        PeliculaController peliculaController = fxmlLoader.getController();
+        peliculaController.setData(pelicula);
+        HBox.setMargin(peliculaBox, new Insets(0, 10, 0, 10));
+
+        if (column == 6) {
+            column = 0;
+            ++row;
+        }
+        peliculaContainer.add(peliculaBox, column++, row);
+        GridPane.setMargin(peliculaBox, new Insets(10, 10, 10, 10));
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}
+}*/
 
 
 

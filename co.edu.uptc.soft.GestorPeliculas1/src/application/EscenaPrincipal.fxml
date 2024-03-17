@@ -121,18 +121,7 @@
                         </Label>
                      </children>
                   </HBox>
-                <!--   <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../css/Style.css">
-                     <children>
-                        <ImageView fitHeight="30.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Img/623084_burger_menu_category_interface_list_icon.png" />
-                           </image>
-                        </ImageView>
-                        <ComboBox prefHeight="32.0" prefWidth="124.0" promptText="     Generos" styleClass="transparent" stylesheets="@../css/Style.css" HBox.hgrow="ALWAYS" />
-                      
-                     </children>
-                  </HBox>
-                   -->
+
 					<HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../css/Style.css">
 					    <children>
 					        <ImageView fitHeight="30.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
@@ -140,7 +129,7 @@
 					                <Image url="@../Img/623084_burger_menu_category_interface_list_icon.png" />
 					            </image>
 					        </ImageView>
-					        <ComboBox fx:id="genreComboBox" prefHeight="40.0" prefWidth="149.0" promptText="  Generos" stylesheets="@../css/Style.css" HBox.hgrow="ALWAYS">
+					        <ComboBox fx:id="genreComboBox" prefHeight="40.0" prefWidth="134.0" promptText="  Generos" stylesheets="@../css/Style.css" HBox.hgrow="ALWAYS">
 					            <items>
 					                <FXCollections fx:factory="observableArrayList">
 					                    <String fx:value="Ciencia ficción" />
@@ -204,31 +193,35 @@
                               <Image url="@../Img/85188_fav_icon.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="32.0" prefWidth="124.0" styleClass="mouse-moved" stylesheets="@../css/Style.css" text="Favoritas">
-                           <font>
-                              <Font name="Berlin Sans FB" size="18.0" />
-                           </font>
-                           <padding>
-                              <Insets left="20.0" right="20.0" />
-                           </padding>
-                        </Label>
+						<Button mnemonicParsing="false" onAction="#mostrarFavoritas" styleClass="font-size" stylesheets="@../css/Style.css" text="Mis Favoritas">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin></Button>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../css/Style.css">
                      <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Img/392529_alarm_alert_clock_event_history_icon.png" />
-                           </image>
-                        </ImageView>
-                        <Label prefHeight="32.0" prefWidth="124.0" styleClass="mouse-moved" stylesheets="@../css/Style.css" text="Historial">
-                           <font>
-                              <Font name="Berlin Sans FB" size="18.0" />
-                           </font>
-                           <padding>
-                              <Insets left="20.0" right="20.0" />
-                           </padding>
-                        </Label>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../css/Style.css">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Img/3209266_bookcase_books_bookshelf_report_shelf_icon.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="32.0" prefWidth="118.0" stylesheets="@../css/Style.css" text="Tu Biblioteca">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" right="20.0" />
+                                 </padding>
+                                 <styleClass>
+                                    <String fx:value="mouse-moved" />
+                                    <String fx:value="font-size" />
+                                 </styleClass>
+                              </Label>
+                           </children>
+                        </HBox>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
@@ -251,37 +244,7 @@
                         <Insets left="10.0" />
                      </VBox.margin>
                   </Label>
-                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../css/Style.css">
-                     <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Img/3209266_bookcase_books_bookshelf_report_shelf_icon.png" />
-                           </image>
-                        </ImageView>
-                        <Label prefHeight="32.0" prefWidth="149.0" styleClass="mouse-moved" stylesheets="@../css/Style.css" text="Tu Biblioteca">
-                           <font>
-                              <Font name="Berlin Sans FB" size="18.0" />
-                           </font>
-                           <padding>
-                              <Insets left="20.0" right="20.0" />
-                           </padding>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
-                     <children>
-                        <Button alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: #FFA832;" text="Crear Biblioteca">
-                           <font>
-                              <Font name="Berlin Sans FB" size="12.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
-                     <children>
-                        <Separator prefWidth="200.0" />
-                     </children>
-                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" />
                </children>
             </VBox>
          </children>
